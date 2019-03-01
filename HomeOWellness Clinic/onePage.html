@@ -1,0 +1,561 @@
+
+<html lang="en">
+<head>
+<title>HomeOWellness Clinic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="scripts.js"></script>
+<link href="onePageStyle.css" type="text/css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+
+<script>function openNav() {
+    document.getElementById("sideNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("sideNav").style.width = "0";
+}
+
+$(document).ready(function(){
+  $(".top-bar a, #hero a, #services a, #price a, #team a, footer a[href='#hero']").on('click', function(event) {
+
+  if (this.hash !== "") {
+
+    event.preventDefault();
+
+    var hash = this.hash;
+
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      window.location.hash = hash;
+      });
+    }
+  });
+});
+
+$(document).ready(function () {
+    $(document).on("scroll", onScroll);
+
+    $('#nav a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+
+        $('#nav a').each(function () {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 1000, "swing", function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('#nav a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('#nav ul li a').removeClass("active");
+            currLink.addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+        }
+    });
+}
+
+// $(document).ready(function() {
+// 	$(".gallery img").click(function() {
+// 		$("#myModal").css("display", "block");
+// 			$(".modal-content").attr("src", this.src);
+// 	});
+// });
+//
+// $(document).ready(function() {
+// 	$(".modalClose").click(function() {
+// 		$("#myModal").css("display", "none");
+// 	});
+// });
+//
+// var slideIndex = 0;
+// var slides = document.getElementsByClassName("images");
+//
+// function plusSlides(n) {
+//   	slideIndex += n;
+//             if (slideIndex >= slides.length) {
+//             	slideIndex = 0;
+//             }
+//             if (slideIndex <= -1) {
+//             	slideIndex = slides.length - 1;
+//             }
+//     showSlides(slideIndex);
+// }
+//
+// function showSlides(n) {
+//   	$('.modal-content').attr('src', slides[n].src);
+// };
+</script>
+<!--  new testimonial-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+
+</head>
+
+<body>
+
+<div class="top-bar">
+	<div class="left">
+		<a href="#hero"><i class="fa fa-laptop fa-lg"> </i> HomeOWellness Clinic</a>
+	</div>
+	<div class="right hidden-sm hidden-xs" id="nav">
+		<a href="#about">ABOUT</a>
+		<a href="#price">SERVICES</a>
+		<a href="#portfolio">ARTICLES</a>
+		<a href="#price2">TESTIMONIALS</a>
+		<a href="#team">TEAM</a>
+		<a href="#contact">CONTACT</a>
+	</div>
+	<div>
+		<a id="navBtn" class="right hidden-lg hidden-md"><i class="fa fa-bars fa-lg" onclick="openNav()"></i>
+		</a>
+	</div>
+	<div class="right hidden-lg hidden-md" id="sideNav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#about" onclick="closeNav()">ABOUT</a>
+		<a href="#price" onclick="closeNav()">SERVICES</a>
+		<a href="#portfolio" onclick="closeNav()">ARTICLES</a>
+		<a href="#price2" onclick="closeNav()">TESTIMONIALS</a>
+		<a href="#team" onclick="closeNav()">TEAM</a>
+		<a href="#contact" onclick="closeNav()">CONTACT</a>
+    <a href="articles.html"target="_blank">HOMEOPATHIC</a>
+
+
+	</div>
+</div>
+<!-- Main Page -->
+<div id="hero">
+	<div class="bottom-left">
+		<h1>Certified Homeopathic Clinic</h1>
+		<pclass="title">Shagufta Karimi, PharmD</p>
+
+		<button type="button" class="button"><a href="#about">Learn More</a></button>
+	</div>
+</div>
+<!-- About Section -->
+<div id="about">
+	<div class="hdn"></div>
+	<h2 style="font-size:35px;" >OUR MISSION </h2>
+    <div style="padding-left: 120" >
+    <p><i>-Shagufta Karimi, PharmD<i><p>
+
+  </div>
+  		<div id="features">
+    		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <!-- "fa fa-desktop fa-5x" -->
+          	<i class="fa fa-user-md fa-5x"></i>
+      			<p>Responsive</p>
+      			<p>I strive to provide quick, accurate, and detailed services tailored to each patient, tending to their every health related need. I make it a priority to put in my full effort to ensure each patient receives the care they are looking for. </p>
+    		</div>
+   			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      			<i class="fa fa-heart fa-5x"></i>
+      			<p>Passion</p>
+      			<p>I am increasingly passionate about being part of a wellness community and raising awareness about healthcare alternatives to make sure everyone has access to varying forms of medical services. </p>
+    		</div>
+    		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      			<i class="fa fa-diamond fa-5x"></i>
+      			<p>Design</p>
+      			<p>Being a registered pharmacist, opening up the doors to natural treatments allowed me to broaden my interests. Back in Pakistan, homeopathy is very prevalent so it’s invigorating to be able to connect to my traditional and cultural roots by practicing homeopathy here in Canada as well. It feels like home away from home. </p>
+    		</div>
+    		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      			<i class="fa fa-cog fa-5x"></i>
+      			<p>Support</p>
+      			<p> I make it my mission to be available to my patients as often as possible, even outside of my office. Whether you’re sitting across from my desk or at home on your couch, please feel free to reach out and discuss anything that is on your mind. My goal is to create a safe space for each patient to ensure they are always comfortable and well taken care of.</p>
+    		</div>
+  		</div>
+</div>
+<!-- OG Services Section -->
+<!-- new Services Section -->
+<div id="price">
+  <h2>SERVICES</h2>
+  <p>The HomeOWellness Clinic provides a wide variety of services catered to your specific needs</p>
+    <div class="col-lg-3 col-md-4 col-sm-12">
+  		<ul class="price np">
+        <img  src="servicesImg/femaleDocSmilePatient.jpg" alt="smilingDoc" width="300px" height="200px">
+        <li class="header"> Homeopathic Treatment Session</li>
+    		<li>Initial Consultation takes about 2 hours <br> <br></li>
+    		<li>Follow-up appointments are about 30 minutes</li>
+    		<li>Discuss chief complaints or issues while getting background information <br> <br></li>
+    		<li>Goal is to derive root causes and potential treatment options <br><br></li>
+        <li class="grey">Cost: $50-$150</li>
+  		</ul>
+	</div>
+	<!-- <div class="col-lg-4 col-md-4 col-sm-12" id="best"> -->
+  <!-- <ul class="price"> -->
+  <div class="col-lg-3 col-md-4 col-sm-12">
+  		<ul class="price NP">
+        <img  src="servicesImg/nutritionAnalysis1.jpg" alt="" width="300px" height="200px">
+        <li class="header"> Nutrition Analysis</li>
+        <li> Is composed of a questionnaire regarding health habits</li>
+    		<li> Discovers potential allergens and toxins in one’s body</li>
+    		<li> Discovers potential unhealthy habits that may have been unknowingly harmful</li>
+    		<li>Goal is to derive a dietary chart containing one’s optimal diet plan to ensure all nutrient levels are being met</li>
+        <li class="grey">Cost: $100</li>
+        <!-- <li class="grey"><a href="#contact" class="button">Sign Up</a></li> -->
+  		</ul>
+	</div>
+	<div class="col-lg-3 col-md-4 col-sm-12">
+  		<ul class="price np">
+        <img  src="servicesImg/iridology1.jpg" alt="" width="300px" height="200px" >
+        <li class="header"> Iris Testing (Irodology)</li>
+        <li>Iris Test takes about 5-10 minutes to complete</li>
+        <li>Reveals through one’s iris all the imbalances, toxins, and other health issues in the body </li>
+        <li>Can predict health issues before the symptoms even surface</li>
+        <li>Goal is to create a treatment plan using homeopathy to eliminate the possible harmful imbalances in the body</li>
+        <li class="grey">Cost: $150</li>
+  		</ul>
+	</div>
+
+  <div class="col-lg-3 col-md-4 col-sm-12">
+  		<ul class="price np">
+        <img  src="servicesImg/foodTolerance3.jpg" alt="" width="300px" height="200px">
+        <li class="header"> Food Intolerance Testing</li>
+        <li>Is composed of a questionnaire regarding one’s health habits <br><br></li>
+        <li>discovers potential allergens and toxins in one’s body</li>
+        <li>discovers potential dietary deficiencies and constraints</li>
+        <li>Goal is to derive and assess foods that one may be intolerant to before symptoms surface</li>
+        <li class="grey">Cost: $200</li>
+  		</ul>
+	</div>
+
+  <div class="col-lg-3 col-md-4 col-sm-12">
+      <ul class="price np">
+        <img  src="servicesImg/hairMinieral1.png" alt="" width="300px" height="200px">
+        <li class="header"> Hair Mineral Analysis</li>
+        <li>Composed of a questionnaire regarding nutrients pertaining to hair</li>
+        <li>Discovers deficiencies in body that may contribute to a lack of minerals in the hair and its texture</li>
+        <li>Discovers alternate forms of hair care to avoid deficiencies from altering one’s hair length, thickness, texture, elasticity, etc.</li>
+        <li>Goal is to create a chart and plan to improve quality of one’s hair through implementing dietary, and self-care measures</li>
+        <li class="grey">Cost: $150</li>
+      </ul>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-12">
+      <ul class="price np">
+        <img  src="servicesImg/detox.png" alt="" width="300" height="200">
+        <li class="header"> Detoxification</li>
+        <li>Is composed of a questionnaire regarding chief complaints and core issues regarding health and reasons for detox</li>
+        <li>Requires detailed patient analysis to ensure all allergies are known</li>
+        <li>Provides a 30-day cleanse to incorporate into one’s diet without drastically altering their existing diet </li>
+        <li>Goal is to flush out toxins from one’s body through introducing detox plan to one’s every day diet <br><br></li>
+        <li class="grey">Cost: $100</li>
+      </ul>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-12">
+      <ul class="price np">
+        <img  src="servicesImg/weightLoss.jpg" alt="" width="300" height="200">
+        <li class="header"> Weight Loss Program</li>
+        <li>Is composed of a detailed health and diet analysis to identify core areas of improvement <br><br></li>
+        <li>Discuss personal goals and create detailed health plan </li>
+        <li>Goal is to ensure all individual goals are met positively and in the most healthy manner</li>
+        <li><br><br><br><br></li>
+        <li class="grey">Cost: $100</li>
+      </ul>
+  </div>
+
+
+</div>
+<!--  Articles section (Previously portfolio section) -->
+<div id="portfolio">
+  <h2>ARTICLES</h2>
+  <p class=articleIntro>Health Tips, Suggestions, and General Information</p>
+
+<!--row 1-->
+  <div class="gallery">
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="articles/ Article1.html" target="_blank"><img class="images" src="articlePreviewImg/anxiety.jpg"  alt="Anxiety Disorder Treatment">
+      <p class="articleTitle"> Generalize Anxiety Disorder & Homeopathic Remedies </p></a>
+      <p class="articleDemo">It’s normal to feel anxious from time to time, especially if your life is stressful. However, excessive, ongoing anxiety and worry that interfere with day-to-day activities may be a sign of generalized anxiety disorder. <br><br><br><br></p>
+      <p><a href="articles/ Article1.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" target="_blank"><img class="images" src="articlePreviewImg/depression.jpg"  alt="Clinical Depression Disorder Treatment">
+      <p class="articleTitle"> Homeopathic Treatment for Depression <br><br> </p></a>
+      <p class="articleDemo">Homeopathic treatment of depression is unique in many ways. For one thing, the majority of patients successfully treated don’t require antidepressants or even homeopathy to remain depression free. In other words, homeopathy for depression usually results in long term resolution of the problem.<br><br></p>
+      <p><a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" target="_blank"><img class="images" src="articlePreviewImg/whatsHompathy.jpg"  alt="what is homeopathy">
+      <p class="articleTitle"> What is Homeopathic Treatment <br> <br></p></a>
+      <p class="articleDemo">Homeopathy is a safe, gentle, and natural system of healing that works with your body to relieve symptoms, restore itself, and improve your overall health. It is extremely safe to use, even with very small children and pets, has none of the side effects of many traditional medications, is very affordable, is made from natural substances, and is FDA regulated.</p>
+      <p><a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+  </div>
+
+<!--row 2-->
+  <div class="gallery">
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" target="_blank"><img class="images" src="articlePreviewImg/anxiety.jpg"  alt="Anxiety Disorder Treatment">
+      <p class="articleTitle"> Generalize Anxiety Disorder & Homeopathic Remedies </p></a>
+      <p class="articleDemo">It’s normal to feel anxious from time to time, especially if your life is stressful. However, excessive, ongoing anxiety and worry that interfere with day-to-day activities may be a sign of generalized anxiety disorder. <br><br><br><br></p>
+      <p><a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" target="_blank"><img class="images" src="articlePreviewImg/depression.jpg"  alt="Clinical Depression Disorder Treatment">
+      <p class="articleTitle"> Homeopathic Treatment for Depression <br><br> </p></a>
+      <p class="articleDemo">Homeopathic treatment of depression is unique in many ways. For one thing, the majority of patients successfully treated don’t require antidepressants or even homeopathy to remain depression free. In other words, homeopathy for depression usually results in long term resolution of the problem.<br><br></p>
+      <p><a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" target="_blank"><img class="images" src="articlePreviewImg/homeopathy.jpg"  alt="benefit of using homeopathy">
+      <p class="articleTitle"> Benefits of Reciving Homeopathic Treatment <br> </p></a>
+      <p class="articleDemo">Homeopathy is a safe, gentle, and natural system of healing that works with your body to relieve symptoms, restore itself, and improve your overall health. It is extremely safe to use, even with very small children and pets, has none of the side effects of many traditional medications, is very affordable, is made from natural substances, and is FDA regulated.</p>
+      <p><a href="file:///Users/Usama/Documents/Personal%20Projects/HomeOWellness%20Clinic/articles.html" class="buttonLink" target="_blank">Read</a>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal hidden-sm hidden-xs">
+  	<span class="modalClose">&times;</span>
+  		<img class="modal-content zoom-in">
+  		<a id="prev" onclick="plusSlides(-1)">&#10094;</a>
+    	<a id="next" onclick="plusSlides(1)">&#10095;</a>
+ </div>
+</div>
+
+<!-- new testimonials -->
+<div id="price2">
+  <h2>TESTIMONIALS</h2>
+  <p>Better healthcare starts here. This is what our trusting clients have to say about us!</p>
+  <br><br>
+
+
+  <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div id="testimonial-slider" class="owl-carousel">
+                      <div class="testimonial">
+                          <div class="pic">
+                              <img src="testimonials/testimonial1.jpg">
+                          </div>
+                          <p class="description">
+                              Shagufta first introduced me to homeopathy while she was still in College. Her enthusiasm and her belief in homeopathy and homeopathic remedies lead me to my first session which took place at the college. At that time I was suffering with H.Pylori for almost a year. After taking the remedy she had prescribed, three weeks later I was tested for H.Pylori again and this time it had finally disappeared. Today I still continue to see Shagufta now in her own private practice. She has helped me with my thyroid. She is very patient and caring. Looking forward to continuing with Shagufta on my journey to good health !
+                          </p>
+                          <h3 class="title">Nafis Mohammad</h3>
+                          <p class="disease"> &hearts; &nbsp; Treated for Helicobacter Pylori and Thyroid </p>
+                      </div>
+
+                      <div class="testimonial">
+                          <div class="pic">
+                              <img src="https://images.pexels.com/photos/638700/pexels-photo-638700.jpeg?w=940&h=650&auto=compress&cs=tinysrgb">
+                          </div>
+                          <p class="description">
+                            My experience with Shagufta and homeopathic medicine has been amazing! In one month I have seen results and improvements. I went in for my menstrual cycles and since I’ve taken the homeopathic medicine my symptoms have drastically decreased. She is extremely kind and is very easy to talk to. Experience with Shagufta and the homeopathic medicine has been very pleasant !
+                          </p>
+                          <br><br><br>
+                          <h3 class="title">Alyssa Brckovic</h3>
+                          <p class="disease"> &hearts; &nbsp; Treated for Menstrual Cycle Pain Management and Cycle Regulation</p>
+                      </div>
+
+                      <div class="testimonial">
+                          <div class="pic">
+                              <img src="testimonials/testimonial3.jpg">
+                          </div>
+                          <p class="description">
+                            I once had partial paralysis which the hospital wrongfully diagnosed as a stroke.
+                            Upon my follow up visits to the doctor they confirmed it was Bell’s Palsy.
+                            I was unable to close my right eye and had to wear an eye patch all the time.
+                            I was on prescription medication without much improvement. Then my friend introduced
+                            me to Shagufta who then conducted an extensive and detailed case taking and carefully chose a remedy that helped me to
+                            recover from my facial paralysis and twitching of my nose significantly in a very
+                            short period of time. She takes time to listen attentively and is very kind and caring
+                          </p>
+                          <h3 class="title">Britney Webster</h3>
+                          <p class="disease"> &hearts; &nbsp; Treated for Bell's Palsy</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+      <script>
+          $(document).ready(function(){
+              $("#testimonial-slider").owlCarousel({
+                  items:2,
+                  itemsDesktop:[1000,2],
+                  itemsDesktopSmall:[990,2],
+                  itemsTablet:[768,1],
+                  pagination:true,
+                  navigation:false,
+                  navigationText:["",""],
+                  slideSpeed:1000,
+                  autoPlay:true
+              });
+          });
+      </script>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+<!-- Team Section -->
+<div id="team">
+  <h2>MEET THE TEAM</h2>
+  <p id="team-title">The talents behind this company</p>
+ <div class="team">
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="card">
+      <img src="teamImg/shags.JPG" alt="Jane">
+      <div class="container">
+        <h3>Shagufta Karimi</h3>
+        <p class="title">PharmD &amp; Homeopathic Specialist</p>
+        <p> Has a PharmD from the University of <br>Toronto, studied Homeopathic medicine <br>from the College of Natural Medicine <br><br><br></p>
+        <a href="#contact"><p><button class="button" type="button"><i class="fa fa-envelope"> </i> Contact</button></p></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="card">
+      <img src="http://img.mp.itc.cn/upload/20170329/cf1a9b5abb184dee991a239af9a77bd3_th.jpeg" alt="Mike">
+      <div class="container">
+        <h3>Pascal Lee</h3>
+        <p class="title">Marketing Specialist</p>
+        <p>Has been with the company for almost <br> 2 years and is responsible for the visual <br> style of the company including the posters,<br> flyers, and business cards <br><br></p>
+        <a href="#contact"><p><button class="button" type="button"><i class="fa fa-envelope"> </i> Contact</button></p></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="card">
+      <img src="teamImg/UsamaAbdali.JPG" alt="usama" width="100px">
+      <div class="container">
+        <h3>Usama Abdali</h3>
+        <p class="title">Web Developer</p>
+        <p>Has been working with the company <br>to create the company website while also <br> being the lead content director. Is <br>currently studying Software Development <br> at York University. </p>
+        <a href="#contact"><p><button class="button" type="button"><i class="fa fa-envelope"> </i> Contact</button></p></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="card">
+      <img src="teamImg/sajida.jpeg" alt="usama">
+      <div class="container">
+        <h3>Sajida Qaim</h3>
+        <p class="title">Human Resource Generalist</p>
+        <p>Has been with the company for almost <br> 1 year and is responsible for managing <br>the programming, and procedures of the <br>organization while also dealing with training<br> and development, and recruitment.
+        <a href="#contact"><p><button class="button" type="button"><i class="fa fa-envelope"> </i> Contact</button></p></a>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- trial 1 -->
+
+<div id="contact">
+  <h2 class>CONTACT US</h2>
+  <p id="contact-title">Leave us a message</p>
+
+  <div class="container">
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <p>We'll get back to you within 24 hours.</p><br>
+      <p><span class="fa fa-map-marker"></span> Toronto, Ontario, Canada</p>
+      <p><span class="fa fa-phone"></span> 416-829-2247</p>
+      <p><span class="fa fa-envelope"></span> sq_pharmh@gmail.com</p>
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=6929%20Haines%20Artist%20Way%2C%20Mississauga%2C%20ON%20L5W%201B6&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.jetzt-drucken-lassen.de">jetzt-drucken-lassen.de</a></div><style>.mapouter
+      {text-align:right;height:400px;width:900px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>Google Maps by <a href="https://www.embedgooglemap.net" rel="nofollow" target="_blank">Embedgooglemap.net</a></div>
+          <!-- <iframe allowTransparency="true" style="min-height:300px; height:inherit; overflow:auto;" width="100%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="https://www.123formbuilder.com/my-contact-form-4631373.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe> -->
+          <!-- <iframe allowTransparency="true" style="min-height:500px; height:inherit; overflow:auto;" width="50%" id="contactform123" padding-left:100px; name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="https://www.123formbuilder.com/my-contact-form-4631373.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact Section -->
+
+<!-- trial 2 -->
+<!-- <p> -->
+  <!-- should be here
+
+  example1 : <a href="http://www.123formbuilder.com/form-4631373/visitor-interaction-form" class="blueLink13">Contact us</a> -->
+  <!-- www.123formbuilder.com script begins here -->
+
+
+<!-- www.123formbuilder.com script begins here -->
+<!-- <iframe allowTransparency="true" style="min-height:1300px; height:inherit; overflow:auto;" width="50%" id="contactform123" padding-left:100px; name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="https://www.123formbuilder.com/my-contact-form-4631373.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe> -->
+<!-- www.123formbuilder.com script ends here -->
+ <!-- www.123formbuilder.com script ends here -->
+
+<!-- example3 : -->
+  <!-- www.123formbuilder.com script begins here -->
+  <!-- <iframe allowTransparency="true" style="min-height:300px; height:inherit; overflow:auto;" width="100%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="https://www.123formbuilder.com/my-contact-form-4631373.html">
+  <p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p>
+  </iframe> -->
+  <!-- www.123formbuilder.com script ends here -->
+<!-- </p> -->
+
+
+<footer>
+  <a href="#hero" title="To Top" class="bounce">
+    <span class="fa fa-chevron-up"></span>
+  </a>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/homeowellness/"><i class="fa fa-facebook-official"></i></a>
+    <a><i class="fa fa-instagram"></i></a>
+    <a><i class="fa fa-snapchat"></i></a>
+    <a><i class="fa fa-pinterest-p"></i></a>
+    <a><i class="fa fa-twitter"></i></a>
+    <a><i class="fa fa-linkedin"></i></a>
+  </div>
+  <p>Designed by Usama Abdali, 2019</p>
+</footer>
+
+</body>
+</html>
